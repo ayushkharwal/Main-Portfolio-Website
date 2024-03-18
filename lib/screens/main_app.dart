@@ -28,7 +28,18 @@ class _MainAppState extends State<MainApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: mainAppBar(),
-      body: screensList[currentScreenTab],
+      // body: screensList[currentScreenTab],
+
+      body: AnimatedSwitcher(
+        duration: const Duration(seconds: 1),
+        child: screensList[currentScreenTab],
+        transitionBuilder: (Widget child, Animation<double> animation) {
+          return FadeTransition(
+            opacity: animation,
+            child: child,
+          );
+        },
+      ),
 
       // body: const ProjectsScreen(),
     );
