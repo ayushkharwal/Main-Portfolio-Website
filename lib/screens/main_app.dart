@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:main_portfolio_flutter/constants/app_constants.dart';
-import 'package:main_portfolio_flutter/screens/about_screen.dart';
-import 'package:main_portfolio_flutter/screens/contacts_screen.dart';
-import 'package:main_portfolio_flutter/screens/home_screen.dart';
-import 'package:main_portfolio_flutter/screens/projects_screen.dart';
-import 'package:main_portfolio_flutter/screens/services_screen.dart';
+import 'package:main_portfolio_flutter/screens/about_screen/about_screen.dart';
+import 'package:main_portfolio_flutter/screens/contacts_screen/contacts_screen.dart';
+import 'package:main_portfolio_flutter/screens/home_screen/home_screen.dart';
+import 'package:main_portfolio_flutter/screens/projects_screen/projects_screen.dart';
+import 'package:main_portfolio_flutter/screens/services_screen/services_screen.dart';
 
 class MainApp extends StatefulWidget {
   const MainApp({super.key});
@@ -17,11 +17,11 @@ class _MainAppState extends State<MainApp> {
   int currentScreenTab = 0;
 
   List<Widget> screensList = [
-    HomeScreen(),
-    AboutScreen(),
-    ServicesScreen(),
-    ProjectsScreen(),
-    ContactsScreen(),
+    const HomeScreen(),
+    const AboutScreen(),
+    const ServicesScreen(),
+    const ProjectsScreen(),
+    const ContactsScreen(),
   ];
 
   @override
@@ -29,12 +29,15 @@ class _MainAppState extends State<MainApp> {
     return Scaffold(
       appBar: mainAppBar(),
       body: screensList[currentScreenTab],
+
+      // body: const ProjectsScreen(),
     );
   }
 
   AppBar mainAppBar() {
     return AppBar(
       backgroundColor: AppConstants.appbgColor,
+      surfaceTintColor: Colors.purple.withOpacity(0.4),
       shape: const Border(
         bottom: BorderSide(color: Colors.grey),
       ),
@@ -48,16 +51,36 @@ class _MainAppState extends State<MainApp> {
               });
             }
           },
-          child: const Row(
+          child: Row(
             children: [
-              Icon(
-                Icons.circle,
-                size: 40,
-                color: Colors.white,
+              Container(
+                decoration: BoxDecoration(
+                  gradient: AppConstants.myGradient,
+                  borderRadius: BorderRadius.circular(37),
+                  border: Border.all(
+                    color: AppConstants.whiteColor,
+                    width: 2,
+                  ),
+                ),
+                height: 45,
+                width: 45,
+                // padding: const EdgeInsets.all(10),
+                child: Center(
+                  child: Text(
+                    'AK',
+                    style: TextStyle(
+                      color: AppConstants.whiteColor,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
               ),
               Text(
                 ' Folio',
-                style: TextStyle(color: Colors.white),
+                style: TextStyle(
+                  color: AppConstants.whiteColor,
+                  fontWeight: FontWeight.bold,
+                ),
               )
             ],
           ),
@@ -113,15 +136,27 @@ class _MainAppState extends State<MainApp> {
           ),
         ),
         const Spacer(),
-        ElevatedButton(
-          onPressed: () {
+        GestureDetector(
+          onTap: () {
             setState(() {
               currentScreenTab = 4;
             });
           },
-          child: const Text(
-            'Contact',
-            style: TextStyle(color: Colors.black),
+          child: Container(
+            decoration: BoxDecoration(
+              gradient: AppConstants.myGradient,
+              borderRadius: BorderRadius.circular(20),
+            ),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 25,
+              vertical: 8,
+            ),
+            child: Text(
+              'Contact',
+              style: TextStyle(
+                color: AppConstants.whiteColor,
+              ),
+            ),
           ),
         ),
         const Spacer(),
