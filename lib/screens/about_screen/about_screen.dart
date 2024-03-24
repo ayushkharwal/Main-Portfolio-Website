@@ -38,7 +38,7 @@ class _AboutScreenState extends State<AboutScreen> {
                   ),
                 ),
                 Text(
-                  'With a 2+ years of experience as a professional flutter developer, I have acquired the skills and knowledge necessary to make your project a success. I enjoy every step of the design process, from discussion and collaboration.',
+                  'With a 1+ years of experience as a professional flutter developer, I have acquired the skills and knowledge necessary to make your project a success. I enjoy every step of the design process, from discussion and collaboration.  Experienced in integrating RESTful APIs and third-party libraries to enhance app functionality. Dedicated to staying updated with the latest Flutter trends and best practices to deliver top-notch solutions. Possess strong problem-solving skills and a keen eye for detail, ensuring robust and polished applications.',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: AppConstants.whiteColor,
@@ -67,7 +67,7 @@ class _AboutScreenState extends State<AboutScreen> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         numLabelWidget(
-          num: '2+',
+          num: '1+',
           label: 'Years of experience',
         ),
         Divider(
@@ -76,7 +76,7 @@ class _AboutScreenState extends State<AboutScreen> {
           height: 20,
         ),
         numLabelWidget(
-          num: '10+',
+          num: '5+',
           label: 'Successful Projects Completed',
         ),
         Divider(
@@ -98,7 +98,7 @@ class _AboutScreenState extends State<AboutScreen> {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           numLabelWidget(
-            num: '2+',
+            num: '1+',
             label: 'Years of experience',
           ),
           VerticalDivider(
@@ -106,7 +106,7 @@ class _AboutScreenState extends State<AboutScreen> {
             thickness: 2,
           ),
           numLabelWidget(
-            num: '10+',
+            num: '5+',
             label: 'Successful Projects Completed',
           ),
           VerticalDivider(

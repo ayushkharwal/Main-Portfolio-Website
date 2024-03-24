@@ -7,4 +7,6 @@ class UrlDetails {
       'https://www.upwork.com/freelancers/~01e79154184d1cd4a4';
 
   static String instagramUrl = 'https://www.instagram.com/ayushkharwal/';
+
+  static String downloadCVUrl = 'https://drive.google.com/uc?export=download&id=1ZgdJEAeVFsRE5XgcmGJxv_z6l706Xofj';
 }

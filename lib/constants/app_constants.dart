@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 
 class AppConstants {
   // COLOR
-  static Color appbgColor = Colors.black;
+  static Color appbgColor = Colors.black87;
   static Color whiteColor = Colors.white;
   static Color greyColor = Colors.grey;
   static Color starrGEOProjectCardColor = const Color(0xff393740);
   static Color starrKEYProjectCardColor = Colors.orange;
   static Color ktRoyalProjectCardColor = const Color(0xffBC6F03);
   static Color habitTrackerCardColor = Colors.blueGrey;
+  static Color shoeaCardColor = Colors.white;
 
   // GRADIENT
   static LinearGradient myGradient = const LinearGradient(
@@ -65,6 +66,11 @@ class AppConstants {
       'assets/images/project_images/habit_tracker2.png';
   static String habitTracker3ImgPath =
       'assets/images/project_images/habit_tracker3.png';
+
+  static String shoea1ImagePath = 'assets/images/project_images/Shoea1.png';
+  static String shoea2ImagePath = 'assets/images/project_images/Shoea2.png';
+  static String shoea3ImagePath = 'assets/images/project_images/Shoea3.png';
+  static String shoea4ImagePath = 'assets/images/project_images/Shoea4.png';
 
   // LOTTIE FILE PATH
   static String imgBgLottiePath = 'assets/circle_loader.json';

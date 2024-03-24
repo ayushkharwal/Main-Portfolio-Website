@@ -13,7 +13,7 @@ class MainApp extends StatefulWidget {
   State<MainApp> createState() => _MainAppState();
 }
 
-class _MainAppState extends State<MainApp> {
+class _MainAppState extends State<MainApp> with TickerProviderStateMixin {
   int currentScreenTab = 0;
 
   List<Widget> screensList = [
@@ -34,6 +34,14 @@ class _MainAppState extends State<MainApp> {
         duration: const Duration(seconds: 1),
         child: screensList[currentScreenTab],
         transitionBuilder: (Widget child, Animation<double> animation) {
+          // return SlideTransition(
+          //   position: Tween<Offset>(
+          //     begin: const Offset(1.0, 0.0),
+          //     end: Offset.zero,
+          //   ).animate(animation),
+          //   child: child,
+          // );
+
           return FadeTransition(
             opacity: animation,
             child: child,
@@ -48,7 +56,7 @@ class _MainAppState extends State<MainApp> {
   AppBar mainAppBar() {
     return AppBar(
       backgroundColor: AppConstants.appbgColor,
-      surfaceTintColor: Colors.purple.withOpacity(0.4),
+      surfaceTintColor: Colors.black,
       shape: const Border(
         bottom: BorderSide(color: Colors.grey),
       ),

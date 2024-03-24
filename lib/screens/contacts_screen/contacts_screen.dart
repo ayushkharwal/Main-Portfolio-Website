@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:main_portfolio_flutter/constants/app_constants.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ContactsScreen extends StatefulWidget {
   const ContactsScreen({super.key});
@@ -9,6 +10,38 @@ class ContactsScreen extends StatefulWidget {
 }
 
 class _ContactsScreenState extends State<ContactsScreen> {
+  TextEditingController nameController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController subjectController = TextEditingController();
+  TextEditingController messageController = TextEditingController();
+
+  Future<void> sendEmail({
+    required String email,
+    String subject = "test subject",
+    String body = "test body",
+  }) async {
+    String mail = "mailto:$email?subject=$subject&body=${Uri.encodeFull(body)}";
+    if (await canLaunchUrl(Uri.parse(mail))) {
+      await launchUrl(Uri.parse(mail));
+    } else {
+      throw Exception("Unable to open the email");
+    }
+  }
+
+  Future<void> sendEmailInBrowser({
+    required String email,
+    String subject = "test subject",
+    String body = "test body",
+  }) async {
+    String gmailUrl =
+        "https://mail.google.com/mail/?view=cm&to=$email&su=$subject&body=${Uri.encodeFull(body)}";
+    if (await canLaunchUrl(Uri.parse(gmailUrl))) {
+      await launchUrl(Uri.parse(gmailUrl));
+    } else {
+      throw Exception("Unable to open Gmail in browser");
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -61,32 +94,33 @@ class _ContactsScreenState extends State<ContactsScreen> {
                       ),
                     ),
                     const SizedBox(height: 20),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Flexible(
-                          child: TextFormField(
-                            style: TextStyle(color: AppConstants.whiteColor),
-                            decoration: textFieldDecoration(
-                              hintText: 'Name',
-                            ),
-                          ),
-                        ),
-                        const SizedBox(width: 10),
-                        Flexible(
-                          child: TextFormField(
-                            style: TextStyle(color: AppConstants.whiteColor),
-                            decoration: textFieldDecoration(
-                              hintText: 'Email',
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 20),
+                    // Row(
+                    //   mainAxisAlignment: MainAxisAlignment.center,
+                    //   crossAxisAlignment: CrossAxisAlignment.center,
+                    //   children: [
+                    //     Flexible(
+                    //       child: TextFormField(
+                    //         style: TextStyle(color: AppConstants.whiteColor),
+                    //         decoration: textFieldDecoration(
+                    //           hintText: 'Name',
+                    //         ),
+                    //       ),
+                    //     ),
+                    //     const SizedBox(width: 10),
+                    //     Flexible(
+                    //       child: TextFormField(
+                    //         style: TextStyle(color: AppConstants.whiteColor),
+                    //         decoration: textFieldDecoration(
+                    //           hintText: 'Email',
+                    //         ),
+                    //       ),
+                    //     ),
+                    //   ],
+                    // ),
+                    // const SizedBox(height: 20),
                     TextFormField(
                       style: TextStyle(color: AppConstants.whiteColor),
+                      controller: subjectController,
                       decoration: textFieldDecoration(
                         hintText: 'Subject',
                       ),
@@ -96,6 +130,7 @@ class _ContactsScreenState extends State<ContactsScreen> {
                       minLines: 5,
                       maxLines: 7,
                       style: TextStyle(color: AppConstants.whiteColor),
+                      controller: messageController,
                       decoration: InputDecoration(
                         hintText: 'Message',
                         hintStyle: const TextStyle(
@@ -108,7 +143,13 @@ class _ContactsScreenState extends State<ContactsScreen> {
                     ),
                     const SizedBox(height: 20),
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () async {
+                        sendEmail(
+                          email: 'ayush.kharwal17@gmail.com',
+                          subject: subjectController.text,
+                          body: messageController.text,
+                        );
+                      },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: AppConstants.whiteColor,
                         shape: RoundedRectangleBorder(

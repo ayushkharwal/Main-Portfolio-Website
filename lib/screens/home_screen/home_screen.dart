@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:main_portfolio_flutter/constants/app_constants.dart';
 import 'package:main_portfolio_flutter/constants/url_details.dart';
@@ -113,7 +114,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ),
                         ElevatedButton.icon(
-                          onPressed: () {},
+                          onPressed: () {
+                            launchUrl(Uri.parse(UrlDetails.downloadCVUrl));
+                          },
                           icon: Icon(
                             Icons.download_rounded,
                             color: AppConstants.whiteColor,
@@ -177,16 +180,6 @@ class _HomeScreenState extends State<HomeScreen> {
                             height: 40,
                           ),
                         ),
-                        // const SizedBox(width: 20),
-                        // InkWell(
-                        //   onTap: () {
-                        //     launchUrl(Uri.parse(UrlDetails.instagramUrl));
-                        //   },
-                        //   child: SvgPicture.asset(
-                        //     AppConstants.instaIconPath,
-                        //     height: 40,
-                        //   ),
-                        // ),
                         const Spacer(),
                       ],
                     )

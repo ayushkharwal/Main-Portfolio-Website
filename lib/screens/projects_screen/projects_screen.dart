@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:main_portfolio_flutter/constants/app_constants.dart';
 import 'package:main_portfolio_flutter/screens/projects_screen/projects_screen_constants.dart';
 
@@ -64,9 +62,30 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
                       size: size,
                     ),
 
-              // KT Royal
+              // SHOEA
               size.width > 888
                   ? projectCard1Row(
+                      label: 'Shoea',
+                      description: ProjectsScreenConstants.shoeaDesc,
+                      imgCardColor: AppConstants.shoeaCardColor,
+                      img1Path: AppConstants.shoea1ImagePath,
+                      img2Path: AppConstants.shoea2ImagePath,
+                      img3Path: AppConstants.shoea3ImagePath,
+                      size: size,
+                    )
+                  : projectCard1Column(
+                      label: 'Shoea',
+                      description: ProjectsScreenConstants.shoeaDesc,
+                      imgCardColor: AppConstants.shoeaCardColor,
+                      img1Path: AppConstants.shoea1ImagePath,
+                      img2Path: AppConstants.shoea2ImagePath,
+                      img3Path: AppConstants.shoea3ImagePath,
+                      size: size,
+                    ),
+
+              // KT Royal
+              size.width > 888
+                  ? projectCard2Row(
                       label: 'KT Royal',
                       description: ProjectsScreenConstants.ktRoyalDesc,
                       imgCardColor: AppConstants.ktRoyalProjectCardColor,
@@ -75,7 +94,7 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
                       img3Path: AppConstants.kt4ImgPath,
                       size: size,
                     )
-                  : projectCard1Column(
+                  : projectCard2Column(
                       label: 'KT Royal',
                       description: ProjectsScreenConstants.ktRoyalDesc,
                       imgCardColor: AppConstants.ktRoyalProjectCardColor,
@@ -87,20 +106,18 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
 
               // Habit Tracker
               size.width > 888
-                  ? projectCard2Row(
+                  ? projectCard1Row(
                       label: 'Habit Tracker',
-                      description:
-                          '"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"',
+                      description: ProjectsScreenConstants.habitTrackerDesc,
                       imgCardColor: AppConstants.habitTrackerCardColor,
                       img1Path: AppConstants.habitTracker1ImgPath,
                       img2Path: AppConstants.habitTracker2ImgPath,
                       img3Path: AppConstants.habitTracker3ImgPath,
                       size: size,
                     )
-                  : projectCard2Column(
+                  : projectCard1Column(
                       label: 'Habit Tracker',
-                      description:
-                          '"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"',
+                      description: ProjectsScreenConstants.habitTrackerDesc,
                       imgCardColor: AppConstants.habitTrackerCardColor,
                       img1Path: AppConstants.habitTracker1ImgPath,
                       img2Path: AppConstants.habitTracker2ImgPath,
