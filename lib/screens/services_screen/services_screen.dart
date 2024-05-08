@@ -112,16 +112,16 @@ class _ServicesScreenState extends State<ServicesScreen> {
                   ),
                 ),
                 const SizedBox(height: 20),
-                ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.black,
-                  ),
-                  child: const Text(
-                    'View Projects',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ),
+                // ElevatedButton(
+                //   onPressed: () {},
+                //   style: ElevatedButton.styleFrom(
+                //     backgroundColor: Colors.black,
+                //   ),
+                //   child: const Text(
+                //     'View Projects',
+                //     style: TextStyle(color: Colors.white),
+                //   ),
+                // ),
                 size.width < 715
                     ? const SizedBox(height: 50)
                     : const SizedBox.shrink(),
@@ -176,13 +176,13 @@ class _ServicesScreenState extends State<ServicesScreen> {
                   ),
                 ),
                 const SizedBox(height: 20),
-                ElevatedButton(
-                  onPressed: () {},
-                  child: const Text(
-                    'View Projects',
-                    style: TextStyle(color: Colors.black),
-                  ),
-                ),
+                // ElevatedButton(
+                //   onPressed: () {},
+                //   child: const Text(
+                //     'View Projects',
+                //     style: TextStyle(color: Colors.black),
+                //   ),
+                // ),
                 size.width < 715
                     ? const SizedBox(height: 50)
                     : const SizedBox.shrink(),

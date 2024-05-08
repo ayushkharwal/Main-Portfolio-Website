@@ -8,5 +8,9 @@ class UrlDetails {
 
   static String instagramUrl = 'https://www.instagram.com/ayushkharwal/';
 
-  static String downloadCVUrl = 'https://drive.google.com/uc?export=download&id=1ZgdJEAeVFsRE5XgcmGJxv_z6l706Xofj';
+  static String youtubeUrl =
+      'https://www.youtube.com/channel/UCZReVhkWBkGP6eemR7b9nww';
+
+  static String downloadCVUrl =
+      'https://drive.google.com/uc?export=download&id=1FNrRWR4L6fBMVkg8XISj4L7kw-bSI1fz';
 }

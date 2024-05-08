@@ -27,6 +27,7 @@ class AppConstants {
   static String linkedinIconPath = 'assets/icons/linkedin.svg';
   static String githubIconPath = 'assets/icons/github.svg';
   static String twitterIconPath = 'assets/icons/twitter.svg';
+  static String youtubeIconPath = 'assets/icons/youtube.svg';
   static String waveHandIconPath = 'assets/icons/wave.svg';
   static String flutterServicesImgPath =
       'assets/images/flutter_service_img.png';
@@ -50,15 +51,15 @@ class AppConstants {
   static String kt4ImgPath = 'assets/images/project_images/KT 4.png';
 
   static String starrKey1ImgPath =
-      'assets/images/project_images/starr Key 1.png';
+      'assets/images/project_images/Starr Key 1.png';
   static String starrKey2ImgPath =
-      'assets/images/project_images/starr Key 2.png';
+      'assets/images/project_images/Starr Key 2.png';
   static String starrKey3ImgPath =
-      'assets/images/project_images/starr Key 3.png';
+      'assets/images/project_images/Starr Key 3.png';
   static String starrKey4ImgPath =
-      'assets/images/project_images/starr Key 4.png';
+      'assets/images/project_images/Starr Key 4.png';
   static String starrKey5ImgPath =
-      'assets/images/project_images/starr Key 5.png';
+      'assets/images/project_images/Starr Key 5.png';
 
   static String habitTracker1ImgPath =
       'assets/images/project_images/habit_tracker1.png';

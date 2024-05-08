@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:main_portfolio_flutter/constants/app_constants.dart';
 import 'package:main_portfolio_flutter/constants/url_details.dart';
@@ -177,6 +176,16 @@ class _HomeScreenState extends State<HomeScreen> {
                           },
                           child: SvgPicture.asset(
                             AppConstants.githubIconPath,
+                            height: 40,
+                          ),
+                        ),
+                        const SizedBox(width: 20),
+                        InkWell(
+                          onTap: () {
+                            launchUrl(Uri.parse(UrlDetails.youtubeUrl));
+                          },
+                          child: SvgPicture.asset(
+                            AppConstants.youtubeIconPath,
                             height: 40,
                           ),
                         ),
