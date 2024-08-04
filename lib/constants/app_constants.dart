@@ -75,4 +75,11 @@ class AppConstants {
 
   // LOTTIE FILE PATH
   static String imgBgLottiePath = 'assets/circle_loader.json';
+
+  // DRAWER ICONS
+  static String homeDrawerIconPath = 'assets/icons/home.svg';
+  static String aboutDrawerIconPath = 'assets/icons/about.svg';
+  static String servicesDrawerIconPath = 'assets/icons/services.svg';
+  static String projectsDrawerIconPath = 'assets/icons/projects.svg';
+  static String contactDrawerIconPath = 'assets/icons/contact.svg';
 }

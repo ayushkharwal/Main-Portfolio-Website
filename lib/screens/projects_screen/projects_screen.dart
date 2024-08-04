@@ -30,6 +30,8 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
                       img2Path: AppConstants.starrGeo2ImgPath,
                       img3Path: AppConstants.starrGeo4ImgPath,
                       size: size,
+                      imgLoadColor:
+                          ProjectsScreenConstants.starrGEOImagesLoadColor,
                     )
                   : projectCard1Column(
                       label: 'Starr GEO',
@@ -39,6 +41,8 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
                       img2Path: AppConstants.starrGeo2ImgPath,
                       img3Path: AppConstants.starrGeo4ImgPath,
                       size: size,
+                      imgLoadColor:
+                          ProjectsScreenConstants.starrGEOImagesLoadColor,
                     ),
 
               // Starr KEY
@@ -51,6 +55,8 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
                       img2Path: AppConstants.starrKey2ImgPath,
                       img3Path: AppConstants.starrKey4ImgPath,
                       size: size,
+                      imgLoadColor:
+                          ProjectsScreenConstants.starrKeyImagesLoadColor,
                     )
                   : projectCard2Column(
                       label: 'Starr KEY',
@@ -60,6 +66,8 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
                       img2Path: AppConstants.starrKey2ImgPath,
                       img3Path: AppConstants.starrKey4ImgPath,
                       size: size,
+                      imgLoadColor:
+                          ProjectsScreenConstants.starrKeyImagesLoadColor,
                     ),
 
               // SHOEA
@@ -72,6 +80,8 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
                       img2Path: AppConstants.shoea2ImagePath,
                       img3Path: AppConstants.shoea3ImagePath,
                       size: size,
+                      imgLoadColor:
+                          ProjectsScreenConstants.shoeaImagesLoadColor,
                     )
                   : projectCard1Column(
                       label: 'Shoea',
@@ -81,6 +91,8 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
                       img2Path: AppConstants.shoea2ImagePath,
                       img3Path: AppConstants.shoea3ImagePath,
                       size: size,
+                      imgLoadColor:
+                          ProjectsScreenConstants.shoeaImagesLoadColor,
                     ),
 
               // KT Royal
@@ -93,6 +105,8 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
                       img2Path: AppConstants.kt3ImgPath,
                       img3Path: AppConstants.kt4ImgPath,
                       size: size,
+                      imgLoadColor:
+                          ProjectsScreenConstants.ktRoyalImagesLoadColor,
                     )
                   : projectCard2Column(
                       label: 'KT Royal',
@@ -102,6 +116,8 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
                       img2Path: AppConstants.kt3ImgPath,
                       img3Path: AppConstants.kt4ImgPath,
                       size: size,
+                      imgLoadColor:
+                          ProjectsScreenConstants.ktRoyalImagesLoadColor,
                     ),
 
               // Habit Tracker
@@ -114,6 +130,8 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
                       img2Path: AppConstants.habitTracker2ImgPath,
                       img3Path: AppConstants.habitTracker3ImgPath,
                       size: size,
+                      imgLoadColor:
+                          ProjectsScreenConstants.habitTrackerImagesLoadColor,
                     )
                   : projectCard1Column(
                       label: 'Habit Tracker',
@@ -123,6 +141,8 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
                       img2Path: AppConstants.habitTracker2ImgPath,
                       img3Path: AppConstants.habitTracker3ImgPath,
                       size: size,
+                      imgLoadColor:
+                          ProjectsScreenConstants.habitTrackerImagesLoadColor,
                     ),
             ],
           ),
@@ -139,6 +159,7 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
     required String img2Path,
     required String img3Path,
     required Size size,
+    required Color imgLoadColor,
   }) {
     return Padding(
       padding: const EdgeInsets.all(10),
@@ -154,19 +175,46 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Image.asset(
-                    img1Path,
-                    scale: 7,
+                  Container(
+                    height: 420,
+                    width: 207,
+                    decoration: BoxDecoration(
+                      color: imgLoadColor,
+                      borderRadius: BorderRadius.circular(40),
+                    ),
+                    child: Image.asset(
+                      img1Path,
+                      scale: 7,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                   size.width > 1269
-                      ? Image.asset(
-                          img2Path,
-                          scale: 7,
+                      ? Container(
+                          height: 420,
+                          width: 207,
+                          decoration: BoxDecoration(
+                            color: imgLoadColor,
+                            borderRadius: BorderRadius.circular(40),
+                          ),
+                          child: Image.asset(
+                            img2Path,
+                            scale: 7,
+                            fit: BoxFit.cover,
+                          ),
                         )
                       : const SizedBox.shrink(),
-                  Image.asset(
-                    img3Path,
-                    scale: 7,
+                  Container(
+                    height: 420,
+                    width: 207,
+                    decoration: BoxDecoration(
+                      color: imgLoadColor,
+                      borderRadius: BorderRadius.circular(40),
+                    ),
+                    child: Image.asset(
+                      img3Path,
+                      scale: 7,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ],
               ),
@@ -207,6 +255,7 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
     required String img2Path,
     required String img3Path,
     required Size size,
+    required Color imgLoadColor,
   }) {
     return Container(
       padding: const EdgeInsets.all(10),
@@ -245,19 +294,46 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Image.asset(
-                    img1Path,
-                    scale: 7,
+                  Container(
+                    height: 420,
+                    width: 207,
+                    decoration: BoxDecoration(
+                      color: imgLoadColor,
+                      borderRadius: BorderRadius.circular(40),
+                    ),
+                    child: Image.asset(
+                      img1Path,
+                      scale: 7,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                   size.width > 1269
-                      ? Image.asset(
-                          img2Path,
-                          scale: 7,
+                      ? Container(
+                          height: 420,
+                          width: 207,
+                          decoration: BoxDecoration(
+                            color: imgLoadColor,
+                            borderRadius: BorderRadius.circular(40),
+                          ),
+                          child: Image.asset(
+                            img2Path,
+                            scale: 7,
+                            fit: BoxFit.cover,
+                          ),
                         )
                       : const SizedBox.shrink(),
-                  Image.asset(
-                    img3Path,
-                    scale: 7,
+                  Container(
+                    height: 420,
+                    width: 207,
+                    decoration: BoxDecoration(
+                      color: imgLoadColor,
+                      borderRadius: BorderRadius.circular(40),
+                    ),
+                    child: Image.asset(
+                      img3Path,
+                      scale: 7,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ],
               ),
@@ -276,6 +352,7 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
     required String img2Path,
     required String img3Path,
     required Size size,
+    required Color imgLoadColor,
   }) {
     return Padding(
       padding: const EdgeInsets.all(10),
@@ -310,19 +387,31 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Image.asset(
-                  img1Path,
-                  scale: 7,
+                Container(
+                  height: 285,
+                  width: 140,
+                  decoration: BoxDecoration(
+                    color: imgLoadColor,
+                    borderRadius: BorderRadius.circular(40),
+                  ),
+                  child: Image.asset(
+                    img1Path,
+                    scale: 10,
+                    fit: BoxFit.cover,
+                  ),
                 ),
-                size.width > 1269
-                    ? Image.asset(
-                        img2Path,
-                        scale: 7,
-                      )
-                    : const SizedBox.shrink(),
-                Image.asset(
-                  img3Path,
-                  scale: 7,
+                Container(
+                  height: 285,
+                  width: 140,
+                  decoration: BoxDecoration(
+                    color: imgLoadColor,
+                    borderRadius: BorderRadius.circular(40),
+                  ),
+                  child: Image.asset(
+                    img3Path,
+                    scale: 10,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ],
             ),
@@ -340,6 +429,7 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
     required String img2Path,
     required String img3Path,
     required Size size,
+    required Color imgLoadColor,
   }) {
     return Container(
       padding: const EdgeInsets.all(10),
@@ -375,19 +465,31 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Image.asset(
-                  img1Path,
-                  scale: 7,
+                Container(
+                  height: 285,
+                  width: 140,
+                  decoration: BoxDecoration(
+                    color: imgLoadColor,
+                    borderRadius: BorderRadius.circular(40),
+                  ),
+                  child: Image.asset(
+                    img1Path,
+                    scale: 10,
+                    fit: BoxFit.cover,
+                  ),
                 ),
-                size.width > 1269
-                    ? Image.asset(
-                        img2Path,
-                        scale: 7,
-                      )
-                    : const SizedBox.shrink(),
-                Image.asset(
-                  img3Path,
-                  scale: 7,
+                Container(
+                  height: 285,
+                  width: 140,
+                  decoration: BoxDecoration(
+                    color: imgLoadColor,
+                    borderRadius: BorderRadius.circular(40),
+                  ),
+                  child: Image.asset(
+                    img3Path,
+                    scale: 10,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ],
             ),

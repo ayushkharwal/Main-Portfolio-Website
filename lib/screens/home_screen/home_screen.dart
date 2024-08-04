@@ -17,12 +17,14 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
+    double appBarHeight = Scaffold.of(context).appBarMaxHeight ?? 0.0;
+
     return Scaffold(
       backgroundColor: AppConstants.appbgColor,
       body: SingleChildScrollView(
-        physics: const NeverScrollableScrollPhysics(),
+        // physics: const NeverScrollableScrollPhysics(),
         child: SizedBox(
-          height: size.height,
+          height: size.height - appBarHeight,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
@@ -33,10 +35,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    // Text(
-                    //   'Screen Width: ${size.width}',
-                    //   style: const TextStyle(color: Colors.white),
-                    // ),
                     Row(
                       children: [
                         Text(
@@ -112,21 +110,11 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           ),
                         ),
-                        ElevatedButton.icon(
+                        ElevatedButton(
                           onPressed: () {
                             launchUrl(Uri.parse(UrlDetails.downloadCVUrl));
                           },
-                          icon: Icon(
-                            Icons.download_rounded,
-                            color: AppConstants.whiteColor,
-                          ),
                           iconAlignment: IconAlignment.end,
-                          label: Text(
-                            'Download CV',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: AppConstants.whiteColor),
-                          ),
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.transparent,
                             shape: RoundedRectangleBorder(
@@ -136,12 +124,19 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ),
                           ),
+                          child: Text(
+                            'Download CV',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: AppConstants.whiteColor,
+                            ),
+                          ),
                         ),
                       ],
                     ),
                     const SizedBox(height: 20),
                     Text(
-                      'Follow me on',
+                      'My Socials:',
                       style: TextStyle(
                         color: AppConstants.whiteColor,
                         fontWeight: FontWeight.bold,
@@ -150,16 +145,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     const SizedBox(height: 10),
                     Row(
                       children: [
-                        InkWell(
-                          onTap: () {
-                            launchUrl(Uri.parse(UrlDetails.twitterUrl));
-                          },
-                          child: SvgPicture.asset(
-                            AppConstants.twitterIconPath,
-                            height: 40,
-                          ),
-                        ),
-                        const SizedBox(width: 20),
                         InkWell(
                           onTap: () {
                             launchUrl(Uri.parse(UrlDetails.linkedinUrl));
@@ -186,6 +171,16 @@ class _HomeScreenState extends State<HomeScreen> {
                           },
                           child: SvgPicture.asset(
                             AppConstants.youtubeIconPath,
+                            height: 40,
+                          ),
+                        ),
+                        const SizedBox(width: 20),
+                        InkWell(
+                          onTap: () {
+                            launchUrl(Uri.parse(UrlDetails.twitterUrl));
+                          },
+                          child: SvgPicture.asset(
+                            AppConstants.twitterIconPath,
                             height: 40,
                           ),
                         ),

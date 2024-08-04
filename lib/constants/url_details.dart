@@ -12,5 +12,5 @@ class UrlDetails {
       'https://www.youtube.com/channel/UCZReVhkWBkGP6eemR7b9nww';
 
   static String downloadCVUrl =
-      'https://drive.google.com/uc?export=download&id=1FNrRWR4L6fBMVkg8XISj4L7kw-bSI1fz';
+      'https://drive.google.com/uc?export=download&id=1LpsmAIuRbRItN4nOZYMaLr1NwjjkEI2v';
 }

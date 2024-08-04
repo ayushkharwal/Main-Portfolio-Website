@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:main_portfolio_flutter/constants/app_constants.dart';
 import 'package:main_portfolio_flutter/utils/gradient_text.dart';
 
@@ -52,7 +50,7 @@ class _AboutScreenState extends State<AboutScreen> {
                 SizedBox(height: size.height / 5),
                 size.width >= 930
                     ? educationWorkRowWidget()
-                    : educationWorkColumnWidget(),
+                    : educationWorkColumnWidget(size),
                 SizedBox(height: size.height / 5),
               ],
             ),
@@ -122,7 +120,7 @@ class _AboutScreenState extends State<AboutScreen> {
     );
   }
 
-  Column educationWorkColumnWidget() {
+  Column educationWorkColumnWidget(Size size) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -179,12 +177,14 @@ class _AboutScreenState extends State<AboutScreen> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            GradientText(
-              'Work Experience',
-              gradient: AppConstants.myGradient,
-              style: const TextStyle(
-                fontSize: 54,
-                fontWeight: FontWeight.bold,
+            SizedBox(
+              child: GradientText(
+                'Work Experience',
+                gradient: AppConstants.myGradient,
+                style: const TextStyle(
+                  fontSize: 54,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
             const SizedBox(height: 40),
@@ -195,25 +195,45 @@ class _AboutScreenState extends State<AboutScreen> {
                 fontSize: 30,
               ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text(
-                  'Flutter Developer',
-                  style: TextStyle(
-                    color: Colors.grey,
-                    fontSize: 24,
+            size.width > 469
+                ? Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text(
+                        'Flutter Developer',
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 24,
+                        ),
+                      ),
+                      const SizedBox(width: 20),
+                      Text(
+                        '(07/2023 - Present)',
+                        style: TextStyle(
+                          color: AppConstants.greyColor,
+                        ),
+                      ),
+                    ],
+                  )
+                : Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text(
+                        'Flutter Developer',
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 24,
+                        ),
+                      ),
+                      const SizedBox(width: 20),
+                      Text(
+                        '(07/2023 - Present)',
+                        style: TextStyle(
+                          color: AppConstants.greyColor,
+                        ),
+                      ),
+                    ],
                   ),
-                ),
-                const SizedBox(width: 20),
-                Text(
-                  '(07/2023 - Present)',
-                  style: TextStyle(
-                    color: AppConstants.greyColor,
-                  ),
-                ),
-              ],
-            ),
             const SizedBox(height: 20),
             Text(
               'IndiaP2P',
@@ -222,25 +242,45 @@ class _AboutScreenState extends State<AboutScreen> {
                 fontSize: 30,
               ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text(
-                  'Flutter Developer Intern',
-                  style: TextStyle(
-                    color: Colors.grey,
-                    fontSize: 24,
+            size.width > 469
+                ? Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text(
+                        'Flutter Developer Intern',
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 24,
+                        ),
+                      ),
+                      const SizedBox(width: 20),
+                      Text(
+                        '(03/2023 - 07/2023)',
+                        style: TextStyle(
+                          color: AppConstants.greyColor,
+                        ),
+                      ),
+                    ],
+                  )
+                : Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text(
+                        'Flutter Developer Intern',
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 24,
+                        ),
+                      ),
+                      const SizedBox(width: 20),
+                      Text(
+                        '(03/2023 - 07/2023)',
+                        style: TextStyle(
+                          color: AppConstants.greyColor,
+                        ),
+                      ),
+                    ],
                   ),
-                ),
-                const SizedBox(width: 20),
-                Text(
-                  '(03/2023 - 07/2023)',
-                  style: TextStyle(
-                    color: AppConstants.greyColor,
-                  ),
-                ),
-              ],
-            ),
           ],
         ),
       ],

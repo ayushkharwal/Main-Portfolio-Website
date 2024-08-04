@@ -1,4 +1,14 @@
+import 'package:flutter/material.dart';
+
 class ProjectsScreenConstants {
+  // COLORS
+  static const Color starrGEOImagesLoadColor = Color(0xff393749);
+  static Color starrKeyImagesLoadColor = Colors.orange.shade400;
+  static const Color shoeaImagesLoadColor = Colors.white70;
+  static const Color ktRoyalImagesLoadColor = Color(0xffBC6F15);
+  static Color habitTrackerImagesLoadColor = Colors.blueGrey.shade300;
+
+  // DESCRIPTION
   static String starrGEODesc =
       "Starr GEO is a cutting-edge mobile application designed to streamline attendance tracking and shift management with its comprehensive suite of features. Users enjoy seamless attendance capture, including the ability to log breaks for accurate timekeeping. The app facilitates transparency and accountability by allowing users to upload images related to their shifts and add comments for detailed documentation and communication.Furthermore, Starr GEO enhances task management by displaying allocated tasks directly on the staff list, ensuring everyone stays informed and on track. With the convenience of a Finish button, users can effortlessly conclude their shifts, simplifying the process further. Creating shifts is made effortless through the app's QR code integration, enabling users to select available locations with ease. Data security is prioritized, with the application initially storing information in a local database before securely synchronizing it with the main server.To ensure user authenticity and security, Starr GEO implements robust authentication via email ID, providing peace of mind to both users and administrators. With its user-friendly interface and comprehensive features, Starr GEO sets a new standard for efficient and reliable attendance management in various industries.";
 
